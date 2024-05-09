@@ -23,10 +23,13 @@ public class LambdaExpressionDemo {
          *  You can use @FunctionalInterface to the abstract class to inform that it is functional interface & you cannot add more than one abstract methods.
          */
 
-        IPrintable obj3 = () -> System.out.println("From Lambda expression");
+        IPrintable obj3 = () -> System.out.println("From Lambda expression");  //Simplest LE without param and without return type
+
+        IPrintable2 obj4 = (firstName,lastName) -> firstName + " " +lastName;
 
         obj3.print();
         obj1.print();
         obj2.print();
+        System.out.println(obj4.print("Vishwa", "Shindhe"));
     }
 }

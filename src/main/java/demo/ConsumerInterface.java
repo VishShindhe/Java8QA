@@ -27,7 +27,14 @@ public class ConsumerInterface {
 //            System.out.println(elements.get(i).getText());
 //        }
 
-        elements.forEach(element -> System.out.println(element.getText()));
+        //elements.forEach(element -> System.out.println(element.getText()));
+
+        Consumer<WebElement> consumer = (element) -> {
+          if(!element.getText().isBlank())  {
+              System.out.println(element.getText());
+          }
+        };
+        elements.forEach(consumer);
         driver.quit();
     }
 }
